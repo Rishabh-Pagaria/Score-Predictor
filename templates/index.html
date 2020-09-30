@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+    <style>
+
+    body{
+        background-color: #101820FF;
+        font-family: 'Roboto',sans-serif;
+        color: #FEE715FF;
+    }
+    .login_form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+    }
+    .btn:hover{
+        background-color: green;
+    }
+    p{
+        font-size: 1.5em;
+    }
+    </style>
+</head>
+<body>
+<div class="login">
+    <h1><center>Score Predictor Generator</center></h1>
+    <br>
+    <div class="login_form">
+    <form action="{{ url_for('predict') }}" method="POST">
+       No. of Hours Studied: <input type="text" name="hours" placeholder="Enter the hours" required>
+       <br><br><center><button type="submit" class="btn btn-success">Predict</button></center>
+    </form>
+    </div>
+    <br><br>
+    <p><center><font size=4.5em>{{ prediction_text }}</font></center></p>
+    
+</div>
+</body>
+</html>
